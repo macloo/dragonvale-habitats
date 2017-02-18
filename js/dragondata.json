@@ -14,7 +14,7 @@ habitats =
 {"dname":"Olympus Large","max_cash":1.25,"max_dragons":4,"level_avail":22,"dragon_types":"Olympus"},
 {"dname":"Olympus Reward","max_cash":2.5,"max_dragons":5,"level_avail":11,"dragon_types":"Olympus"},
 {"dname":"Omnitat","max_cash":1.75,"max_dragons":4,"level_avail":11,"dragon_types":"All"},
-{"dname":"Ordnamental","max_cash":1,"max_dragons":5,"level_avail":11,"dragon_types":"Ordnamental"},
+{"dname":"Ornamental","max_cash":1,"max_dragons":5,"level_avail":11,"dragon_types":"Ornamental"},
 {"dname":"Rainbow Large","max_cash":1.5,"max_dragons":2,"level_avail":24,"dragon_types":"Rainbow"},
 {"dname":"Rainbow Regular","max_cash":1,"max_dragons":1,"level_avail":11,"dragon_types":"Rainbow"},
 {"dname":"Seasonal Large","max_cash":1.25,"max_dragons":4,"level_avail":23,"dragon_types":"Seasonal"},
