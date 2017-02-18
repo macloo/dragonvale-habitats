@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dragonvale Habitat Planner</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Dragonvale Habitat Planner</h1>
+                <p class="readable">Begin by choosing the Dragonvale <strong>habitat</strong> you want to populate. <a href="http://www.backflipstudios.com/games/dragonvale/">Dragonvale</a> is a mobile game. This app is not associated with the game or its parent company.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <table id="habitatTable" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Habitat</th>
+                            <th>Max Coins (Millions)</th>
+                            <th>Max Dragons</th>
+                            <th>Level Available</th>
+                            <th>Dragon Types</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-xs-12">
+                  <div class="well">
+                      <p>This is a personal project by Mindy McAdams. Data collected from the <a href="http://dragonvale.wikia.com/wiki/DragonVale_Wiki">Dragonvale Wiki</a> and the Dragonvale game. Using <a href="https://datatables.net/">DataTables</a> and <a href="https://getbootstrap.com/">Bootstrap</a>                with the <a href="https://bootswatch.com/paper/">Paper</a> theme.</p>
+                  </div>
+              </div>
+          </div>
+    </div> <!-- close container div -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js">
+    </script>
+    <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js">
+    </script>
+    <script src="js/dragondata.json"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
