@@ -21,5 +21,7 @@ This app is not associated in any way with Backflip.
 
 ## Progress to date
 
-* Table created for all habitats that earn 1 million coins or more.
-* Habitat table is sortable on all columns.
+* (17 Feb) Table created for all habitats that earn 1 million coins or more. Data in JSON (array of objects).
+* Habitat table is sortable on all columns (DataTables library).
+* (18 Feb) Two sections: "selectHab" for the habitat table, and "dragons" for the forms. These hide and show alternately (jQuery).
+* Habitat table rows are clickable. Selecting a row grabs data for that one habitat from the JSON object, and writes it into a DL in "dragons" section.
