@@ -30,3 +30,4 @@ This app is not associated in any way with Backflip.
 ## Left to do
 * Populate the dragon menu for two remaining groups, the combo Moon and Sun, and All.
 * Hide any extra fieldsets, e.g. when a habitat holds only 4 dragons, hide 2 of the 6 fieldsets.
+* Fix decimal places in "Time until habitat max."
