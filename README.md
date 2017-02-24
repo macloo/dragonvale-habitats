@@ -25,3 +25,8 @@ This app is not associated in any way with Backflip.
 * Habitat table is sortable on all columns (DataTables library).
 * (18 Feb) Two sections: "selectHab" for the habitat table, and "dragons" for the forms. These hide and show alternately (jQuery).
 * Habitat table rows are clickable. Selecting a row grabs data for that one habitat from the JSON object, and writes it into a DL in "dragons" section.
+* (21–23 Feb) Added most of the functionality for choosing dragons and the level for each of them. Earnings per minute fills automatically whenever you change the level. Level and Earnings both reset when you change to another dragon. Earnings for all dragons are added together and multiplied by 60 to give your earnings per hour, and the time needed to reach the habitat maximum is also calculated and displayed.
+
+## Left to do
+* Populate the dragon menu for two remaining groups, the combo Moon and Sun, and All.
+* Hide any extra fieldsets, e.g. when a habitat holds only 4 dragons, hide 2 of the 6 fieldsets.
