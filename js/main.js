@@ -32,6 +32,14 @@ $(document).ready(function() {
       // hide table, show form fields
       $('#selectHab').slideUp();
       $('#dragons').slideDown();
+      // show all fieldsets
+      $('fieldset').show();
+      // hide unneeded fieldsets
+      $( "fieldset" ).each(function( index ) {
+          if ( index >= habObject.max_dragons ) {
+            $(this).hide();
+          }
+      });
       // write data for selected hab into dt elements
       // ul li:nth-child(2)
       $('#dragons h2').text(habObject.dname);
@@ -66,25 +74,52 @@ input-text: auto-fill the earnings
 */
 
 function populateForm(choice) {
-  if (choice != "Moon and Sun" && dragons != "All") {
-    // types is the JSON array of dragons grouped by type
-    for (var i = 0; i < types.length; i++) {
-      if ( types[i].hasOwnProperty("type") && types[i].type == choice ) {
-        // use that object to put dragons into the form
-        var currentGroup = types[i];
-        // make list alphabetical
-        var list = currentGroup.dragons.sort();
+    if (choice != "Moon and Sun" && choice != "All") {
+        // types is the JSON array of dragons grouped by type
+        for (var i = 0; i < types.length; i++) {
+            if (types[i].hasOwnProperty("type") && types[i].type == choice) {
+                // use that object to put dragons into the form
+                var currentGroup = types[i];
+                // make list alphabetical
+                var list = currentGroup.dragons.sort();
+                buildFormMenu(list);
+                break;
+            }
+        }
+    } else if (choice == "All") {
+        var dragonList = [];
+        for (var i = 0; i < levels.length; i++) {
+            // get all dragons with level 20 earnings of more than 400
+            if (levels[i].L20 > Number(400)) {
+                dragonList.push(levels[i].Type);
+            }
+        }
+        var list = dragonList.sort();
         buildFormMenu(list);
-        break;
-      }
+    } else if (choice == "Moon and Sun") {
+        // get the Moon group object
+        var moon = types.filter(function( obj ) {
+            return obj.type == "Moon";
+        });
+        // get the Sun group object
+        var sun = types.filter(function( obj ) {
+            return obj.type == "Sun";
+        });
+        // get the dragons array out of each
+        var moonlist = moon[0].dragons;
+        var sunlist = sun[0].dragons;
+        // any item from Moon not in Sun, add it to sunlist
+        for (var i = 0; i < moonlist.length; i++) {
+            if (sunlist.indexOf( moonlist[i] ) === -1) {
+                sunlist.push( moonlist[i] );
+            }
+        }
+        // sunlist now contains all Moon and all Sun with no duplicates
+        var list = sunlist.sort();
+        buildFormMenu(list);
+    } else {
+        alert("No dragon type was chosen.");
     }
-  } else if (choice == "Moon and Sun") {
-    alert("Moon and Sun");
-  } else if (choice == "All") {
-    alert("All");
-  } else {
-    alert("No dragon type was chosen.");
-  }
 }
 
 function buildFormMenu(list) {
@@ -129,7 +164,7 @@ $(selectLevel).on('change', function() {
   $('#total').text(totalEarnings);
   var timeToMax = 0;
   var max = Number( $('#dragons dl dd span').text() ) * 1000000.0;
-  timeToMax = max / totalEarnings;
+  timeToMax = (max / totalEarnings).toFixed(2);
   $('#timeToMax').text( timeToMax );
 });
 
